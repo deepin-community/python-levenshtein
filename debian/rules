@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+PY3VERS=$(shell py3versions -vr)
+PY3LIBPATH := $(shell python3 -c "from distutils.command.build import build ; from distutils.core import Distribution ; b = build(Distribution()) ; b.finalize_options() ; print(b.build_platlib)")
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_build:
+	set -e ; \
+	for py in $(PY3VERS); do \
+		python$$py setup.py build ; \
+	done
+
+override_dh_auto_install:
+	set -e ; \
+	for py in $(PY3VERS); do \
+		python$$py setup.py install --root $(CURDIR)/debian/python3-levenshtein --install-layout=deb ; \
+	done
+
+	# https://github.com/ztane/python-Levenshtein/issues/20
+	rm -f $(CURDIR)/debian/python*-levenshtein*/usr/lib/python*/dist-packages/Levenshtein/_levenshtein.c
+	rm -f $(CURDIR)/debian/python*-levenshtein*/usr/lib/python*/dist-packages/Levenshtein/_levenshtein.h
+
+	# https://github.com/ztane/python-Levenshtein/issues/21
+	rm -f $(CURDIR)/debian/python*-levenshtein*/usr/lib/python*/dist-packages/Levenshtein/StringMatcher.py
+
+override_dh_installdocs:
+	dh_installdocs README.rst NEWS docs/Levenshtein.html
+
+override_dh_installexamples:
+	dh_installexamples Levenshtein/StringMatcher.py

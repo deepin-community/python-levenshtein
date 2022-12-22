@@ -1,0 +1,9 @@
+Document: python-levenshtein3
+Title: python3-levenshtein documentation
+Author: David Necas (Yeti)
+Abstract: The API documentation of the Python Levenshtein package
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/python3-levenshtein/Levenshtein.html
+Files: /usr/share/doc/python3-levenshtein/Levenshtein.html

@@ -1,0 +1,173 @@
+python-levenshtein (0.12.2-2) unstable; urgency=medium
+
+  * remove -dbg package; Closes: #994358
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 30 Sep 2021 19:47:31 -0400
+
+python-levenshtein (0.12.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 13 Feb 2021 00:10:00 -0500
+
+python-levenshtein (0.12.1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Ondřej Nový ]
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + python3-levenshtein-dbg: Add Multi-Arch: same.
+
+  [ Sandro Tosi ]
+  * New upstream release
+  * Use the new Debian Python Team contact name and address
+  * debian/control
+    - bump Standards-Version to 4.5.1 (no changes needed)
+    - drop obsolete X-Python-Version source field
+    - run wrap-and-sort
+    - bump dh compat to 13
+  * debian/copyright
+    - extrend packaging copyright years
+  * debian/watch
+    - bump version to 4
+  * debian/rules
+    - enable hardening flags
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 27 Jan 2021 01:26:51 -0500
+
+python-levenshtein (0.12.0-5) unstable; urgency=medium
+
+  * debian/python3-levenshtein.doc-base
+    - update Document and other info, to avoid conflict with the previous
+      python-levenshtein bin package; Closes: #946721
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 14 Dec 2019 16:08:25 -0500
+
+python-levenshtein (0.12.0-4) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+  * Bump Standards-Version to 4.4.1.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #937885
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 12 Dec 2019 21:06:29 -0500
+
+python-levenshtein (0.12.0-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/control: Deprecating priority extra as per policy 4.0.1
+  * d/watch: Use https protocol
+  * d/control: Remove ancient X-Python3-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Sandro Tosi ]
+  * debian/control
+    - bump Standards-Version to 4.3.0 (no changes needed)
+  * debian/copyright
+    - extend packaging copyright years
+  * bump compat level to 11
+
+ -- Sandro Tosi <morph@debian.org>  Sat, 02 Feb 2019 00:26:52 -0500
+
+python-levenshtein (0.12.0-2) unstable; urgency=medium
+
+  * upload to unstable
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 02 Aug 2015 13:11:20 +0100
+
+python-levenshtein (0.12.0-1) experimental; urgency=medium
+
+  * New upstream release; Closes: #781301
+  * debian/watch
+    - use PyPI redirector
+  * debian/patches/6c654dad56edf9ba4e38b5ab5f5dd6fcf5fffa54.patch
+    - dropped, merged upstream
+  * debian/patches, debian/rules
+    - docs no longer need to be built, install the files from upstream tarball
+  * debian/rules
+    - keep installing StringMatcher.py as an example
+    - remove unnecessary installed source code files
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 10 Apr 2015 13:46:43 +0100
+
+python-levenshtein (0.11.2-2) unstable; urgency=medium
+
+  * debian/patches/6c654dad56edf9ba4e38b5ab5f5dd6fcf5fffa54.patch
+    - fix a crash when using seq*() functions; thanks to Emil Langrock for the
+      report; Closes: #597609
+  * debian/control
+    - bump Standards-Version to 3.9.6 (no changes needed)
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 03 Nov 2014 20:53:51 +0000
+
+python-levenshtein (0.11.2-1) unstable; urgency=low
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Sandro Tosi ]
+  * New upstream release
+  * debian/control
+    - switch me to Maintainer (team to Uploaders)
+    - bump Standards-Version to 3.9.5 (no changes needed)
+    - add python{,3}-setuptools to b-d
+  * debian/watch
+    - udpate download location
+  * debian/{control, copyright}
+    - update homepage information
+  * debian/copyright
+    - convert to DEP-5 format
+  * Switch to dh_python2/3
+  * added Python 3 packages
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 02 Feb 2014 21:15:26 +0100
+
+python-levenshtein (0.10.1-2) unstable; urgency=low
+
+  * debian/control
+    - adopt it under DMPT umbrella; thanks to Nicolas for his previous work;
+      Closes: #654348
+    - add Vcs-* fields
+    - rename XS-P-V fields to X-P-V
+    - remove useless XB-P-V field
+    - bump Standards-Version to 3.9.2
+    - added ${misc:Depends} to binary Depends
+    - update Homepage field; Closes: #479626
+  * Switch to 3.0 (quilt) source format
+  * debian/{control, rules}
+    - use python-support instead of python-central; Closes: #617011
+    - build debug extension
+  * Switch to short debian/rules file format
+  * debian/watch
+    - remove template header
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 10 Jan 2012 19:06:55 +0100
+
+python-levenshtein (0.10.1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload, to prepare for Python 2.6 transition
+  * debian/rules
+    - use '--install-layout=deb' when installing the module; thanks to Jakub
+      Wilk for the report; Closes: #571507
+  * debian/control
+    - bump b-d in python-all-dev to '>= 2.5.3-1~', to support install-layout
+
+ -- Sandro Tosi <morph@debian.org>  Mon, 01 Mar 2010 11:35:26 +0100
+
+python-levenshtein (0.10.1-1) unstable; urgency=low
+
+  * Initial Release. Closes: #473274
+
+ -- Nicolas FRANCOIS (Nekral) <nicolas.francois@centraliens.net>  Sat, 29 Mar 2008 18:04:18 +0100
