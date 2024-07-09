@@ -1,10 +1,16 @@
-recursive-include docs *.html
-recursive-include Levenshtein *.c *.h *.py
-include README.rst
-include HISTORY.txt
+include setup.py
+include CMakeLists.txt
+include README.md
 include COPYING
-include NEWS
-global-exclude *pyc
-global-exclude *so
-global-exclude .project
-global-exclude .pydevproject
+include HISTORY.md
+include pyproject.toml
+include _custom_build/backend.py
+include src/Levenshtein/py.typed
+
+recursive-include src/Levenshtein CMakeLists.txt
+recursive-include src/Levenshtein *.hpp *.h *.cpp *.pyx *.pxd *.cxx *.pyi
+recursive-include tests *
+
+include extern/rapidfuzz-cpp/LICENSE
+include extern/rapidfuzz-cpp/CMakeLists.txt
+recursive-include extern/rapidfuzz-cpp/rapidfuzz *.hpp *.impl

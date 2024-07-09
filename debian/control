@@ -1,22 +1,32 @@
 Source: python-levenshtein
 Section: python
 Priority: optional
-Maintainer: Sandro Tosi <morph@debian.org>
-Uploaders: Debian Python Team <team+python@tracker.debian.org>,
-Build-Depends: debhelper-compat (= 13),
-               dh-python,
-               python3-all-dev,
-               python3-setuptools,
-Standards-Version: 4.5.1
-Homepage: https://github.com/ztane/python-Levenshtein
+Maintainer: Debian Python Team <team+python@tracker.debian.org>,
+Build-Depends:
+ cython3 (>= 3.0.0a10),
+ debhelper-compat (= 13),
+ dh-python,
+ librapidfuzz-cpp-dev,
+ pybuild-plugin-pyproject,
+ python3-all-dev,
+ python3-pytest,
+ python3-rapidfuzz,
+ python3-setuptools,
+ python3-skbuild (>= 0.13.0),
+ python3-sphinx,
+ python3-sphinx-rtd-theme,
+Standards-Version: 4.7.0
+Homepage: https://maxbachmann.github.io/Levenshtein/
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-levenshtein.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-levenshtein
+Rules-Requires-Root: no
 
 Package: python3-levenshtein
 Architecture: any
-Depends: ${misc:Depends},
-         ${python3:Depends},
-         ${shlibs:Depends},
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
 Description: extension for computing string similarities and edit distances (Python 3)
  The Levenshtein module computes Levenshtein distances, similarity ratios,
  generalized medians and set medians of Unicode or non-Unicode strings.
@@ -30,3 +40,23 @@ Description: extension for computing string similarities and edit distances (Pyt
  It is useful for spell checking, or fuzzy matching of gettext messages.
  .
  This package contains Levenshtein for Python 3.
+
+Package: python-levenshtein-doc
+Architecture: all
+Section: doc
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
+Description: extension for computing string similarities and edit distances (Documentations)
+ The Levenshtein module computes Levenshtein distances, similarity ratios,
+ generalized medians and set medians of Unicode or non-Unicode strings.
+ Because it's implemented in C, it's much faster than the corresponding
+ Python library functions and methods.
+ .
+ The Levenshtein distance is the minimum number of single-character
+ insertions, deletions, and substitutions to transform one string into
+ another.
+ .
+ It is useful for spell checking, or fuzzy matching of gettext messages.
+ .
+ This package contains the documentation.
