@@ -5,5 +5,5 @@ Abstract: The API documentation of the Python Levenshtein package
 Section: Text
 
 Format: HTML
-Index: /usr/share/doc/python3-levenshtein/Levenshtein.html
-Files: /usr/share/doc/python3-levenshtein/Levenshtein.html
+Index: /usr/share/doc/python-levenshtein-doc/index.html
+Files: /usr/share/doc/python-levenshtein-doc/*.html
