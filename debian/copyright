@@ -1,16 +1,19 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: python-Levenshtein
-Source: https://github.com/ztane/python-Levenshtein
+Source: https://github.com/maxbachmann/Levenshtein
 
 Files: *
-Copyright: Copyright (C) 2002-2003 David Necas (Yeti) <yeti@physics.muni.cz>
- Copyright (C) 2002 Atakan Gurkan
- Copyright (C) 1996, 1997, 1998, 1999, 2000 James Theiler, Brian Gough
+Copyright:
+ 2021-     Max Bachmann oss@maxbachmann.de
+ 2002-2003 David Necas (Yeti) <yeti@physics.muni.cz>
+ 2002      Atakan Gurkan
+ 1996-2000 James Theiler, Brian Gough
 License: GPL-2+
 
 Files: debian/*
 Copyright: 2008 Nicolas FRANCOIS (Nekral) <nicolas.francois@centraliens.net>
  2010-2021 Sandro Tosi <morph@debian.org>
+ 2024-     Stuart Prescott <stuart@debian.org>
 License: GPL-2+
 
 License: GPL-2+
